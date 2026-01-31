@@ -32,6 +32,9 @@ $query_produk = mysqli_query($koneksi, "SELECT * FROM tb_produk ORDER BY id_prod
             <a href="index.php?page=tambah_produk" class="btn" style="background-color: #27ae60; color: white;">
                 <i class="fas fa-plus mr-2"></i>Tambah Produk
             </a>
+            <a href="index.php?page=request_gas" class="btn btn-warning ml-2">
+                <i class="fas fa-truck-loading mr-2"></i>Request Stok ke Agen
+            </a>
         </div>
     </div>
 
@@ -65,7 +68,16 @@ $query_produk = mysqli_query($koneksi, "SELECT * FROM tb_produk ORDER BY id_prod
                             </td>
                             <td><?php echo $row['nama_produk']; ?></td>
                             <td><?php echo formatRupiah($row['harga']); ?></td>
-                            <td><?php echo $row['stok']; ?></td>
+                            <td>
+                                <?php if ($row['stok'] < 10): ?>
+                                    <span class="badge badge-danger"><?php echo $row['stok']; ?></span>
+                                    <small class="text-danger">(Stok rendah!)</small>
+                                <?php elseif ($row['stok'] < 30): ?>
+                                    <span class="badge badge-warning"><?php echo $row['stok']; ?></span>
+                                <?php else: ?>
+                                    <span class="badge badge-success"><?php echo $row['stok']; ?></span>
+                                <?php endif; ?>
+                            </td>
                             <td>
                                 <span class="badge <?php echo ($row['status'] == 'aktif') ? 'badge-success' : 'badge-danger'; ?>">
                                     <?php echo ucfirst($row['status']); ?>

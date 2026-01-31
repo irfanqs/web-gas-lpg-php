@@ -11,7 +11,6 @@ if (isset($_POST['tambah'])) {
     $nama = escapeString($_POST['nama_produk']);
     $deskripsi = escapeString($_POST['deskripsi']);
     $harga = floatval($_POST['harga']);
-    $stok = intval($_POST['stok']);
     $status = escapeString($_POST['status']);
     
     // Upload gambar
@@ -22,8 +21,9 @@ if (isset($_POST['tambah'])) {
         move_uploaded_file($_FILES['gambar']['tmp_name'], '../uploads/produk/' . $gambar);
     }
     
+    // Stok default 0, akan bertambah dari distribusi agen
     $query = mysqli_query($koneksi, "INSERT INTO tb_produk (nama_produk, deskripsi, harga, stok, gambar, status) 
-                                     VALUES ('$nama', '$deskripsi', $harga, $stok, '$gambar', '$status')");
+                                     VALUES ('$nama', '$deskripsi', $harga, 0, '$gambar', '$status')");
     
     if ($query) {
         echo "<script>alert('Produk berhasil ditambahkan!'); window.location='index.php?page=kelola_produk';</script>";
@@ -71,8 +71,9 @@ if (isset($_POST['tambah'])) {
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Stok <span class="text-danger">*</span></label>
-                            <input type="number" class="form-control" name="stok" required>
+                            <label>Stok</label>
+                            <input type="number" class="form-control" value="0" disabled>
+                            <small class="text-muted">Stok akan bertambah dari distribusi agen</small>
                         </div>
                     </div>
                 </div>

@@ -151,6 +151,23 @@ $notif_count = mysqli_fetch_assoc($query_notif)['total'];
                         </a>
                     </li>
 
+                    <!-- Menu: Request Gas ke Agen -->
+                    <?php
+                    $query_pending_req = mysqli_query($koneksi, "SELECT COUNT(*) as total FROM tb_permintaan_gas WHERE id_admin = $id_user AND status = 'menunggu'");
+                    $pending_req_count = mysqli_fetch_assoc($query_pending_req)['total'];
+                    ?>
+                    <li class="nav-item">
+                        <a href="index.php?page=request_gas" class="nav-link <?php echo in_array($page, ['request_gas', 'tambah_request', 'detail_request']) ? 'active' : ''; ?>">
+                            <i class="nav-icon fas fa-truck-loading" style="color: #F79F1F;"></i>
+                            <p>
+                                Request Gas
+                                <?php if ($pending_req_count > 0): ?>
+                                <span class="badge badge-info right"><?php echo $pending_req_count; ?></span>
+                                <?php endif; ?>
+                            </p>
+                        </a>
+                    </li>
+
                     <!-- Menu: Kelola Pengguna (Dropdown) -->
                     <li class="nav-item <?php echo in_array($page, ['kelola_pembeli', 'kelola_kurir', 'tambah_kurir', 'ubah_kurir']) ? 'menu-open' : ''; ?>">
                         <a href="#" class="nav-link">
@@ -223,6 +240,15 @@ $notif_count = mysqli_fetch_assoc($query_notif)['total'];
                     break;
                 case 'ubah_produk':
                     include 'ubah_produk.php';
+                    break;
+                case 'request_gas':
+                    include 'request_gas.php';
+                    break;
+                case 'tambah_request':
+                    include 'tambah_request.php';
+                    break;
+                case 'detail_request':
+                    include 'detail_request.php';
                     break;
                 case 'kelola_pembeli':
                     include 'kelola_pembeli.php';

@@ -26,7 +26,6 @@ if (isset($_POST['update'])) {
     $nama = escapeString($_POST['nama_produk']);
     $deskripsi = escapeString($_POST['deskripsi']);
     $harga = floatval($_POST['harga']);
-    $stok = intval($_POST['stok']);
     $status = escapeString($_POST['status']);
     
     // Upload gambar baru jika ada
@@ -38,11 +37,11 @@ if (isset($_POST['update'])) {
         $gambar_query = ", gambar = '$gambar'";
     }
     
+    // Stok tidak bisa diubah manual, hanya dari distribusi agen
     $query = mysqli_query($koneksi, "UPDATE tb_produk SET 
                                      nama_produk = '$nama', 
                                      deskripsi = '$deskripsi', 
                                      harga = $harga, 
-                                     stok = $stok, 
                                      status = '$status' 
                                      $gambar_query 
                                      WHERE id_produk = $id");
@@ -95,9 +94,10 @@ if (isset($_POST['update'])) {
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Stok <span class="text-danger">*</span></label>
-                            <input type="number" class="form-control" name="stok" 
-                                   value="<?php echo $produk['stok']; ?>" required>
+                            <label>Stok Saat Ini</label>
+                            <input type="number" class="form-control" 
+                                   value="<?php echo $produk['stok']; ?>" disabled>
+                            <small class="text-muted">Stok hanya bisa bertambah dari distribusi agen. <a href="index.php?page=request_gas">Request Gas</a></small>
                         </div>
                     </div>
                 </div>
