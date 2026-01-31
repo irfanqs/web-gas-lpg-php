@@ -53,6 +53,16 @@ function generateKodePesanan() {
 }
 
 /**
+ * Generate kode permintaan gas unik
+ * Format: REQ-YYYYMMDD-XXXXX
+ */
+function generateKodePermintaan() {
+    $tanggal = date('Ymd');
+    $random = strtoupper(substr(md5(uniqid(mt_rand(), true)), 0, 5));
+    return "REQ-{$tanggal}-{$random}";
+}
+
+/**
  * Format angka ke format Rupiah
  * @param float $angka - Angka yang akan diformat
  * @return string - Format: Rp 18.000

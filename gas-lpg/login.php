@@ -15,6 +15,9 @@ if (isset($_SESSION['role']) && $_SESSION['role'] != '') {
         case 'Admin':
             header('location:admin/index.php?page=home');
             exit();
+        case 'Agen':
+            header('location:agen/index.php?page=home');
+            exit();
         case 'Kurir':
             header('location:kurir/index.php?page=home');
             exit();
@@ -55,6 +58,9 @@ if (isset($_POST['login'])) {
                 switch ($data['role']) {
                     case 'Admin':
                         header('location:admin/index.php?page=home');
+                        exit();
+                    case 'Agen':
+                        header('location:agen/index.php?page=home');
                         exit();
                     case 'Kurir':
                         header('location:kurir/index.php?page=home');
