@@ -48,6 +48,5 @@ Buka browser: http://localhost:8000
 | Pembeli | Pesan produk, pembayaran |
 
 ## Catatan
-
-[^1]: Daftar Midtrans di https://midtrans.com untuk mendapatkan Server Key dan Client Key
-[^2]: Daftar reCAPTCHA di https://www.google.com/recaptcha untuk mendapatkan Site Key dan Secret Key
+- Daftar Midtrans di https://midtrans.com untuk mendapatkan Server Key dan Client Key
+- Daftar reCAPTCHA di https://www.google.com/recaptcha untuk mendapatkan Site Key dan Secret Key
