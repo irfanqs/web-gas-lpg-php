@@ -1,0 +1,119 @@
+.oren {
+    background-color: #f39c12;
+}
+
+/* Sidebar Submenu Styling */
+.nav-sidebar .nav-treeview {
+    padding-left: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin: 5px 10px;
+}
+
+.nav-sidebar .nav-treeview > .nav-item > .nav-link {
+    padding: 10px 15px;
+    margin: 3px 0;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-sidebar .nav-treeview > .nav-item > .nav-link:hover {
+    background-color: rgba(243, 156, 18, 0.2);
+    padding-left: 20px;
+}
+
+/* Active State untuk Menu */
+.nav-sidebar .nav-link.active {
+    background-color: #f39c12 !important;
+    color: #1e272e !important;
+    border-radius: 5px;
+}
+
+.nav-sidebar .nav-link.active i {
+    color: #1e272e !important;
+}
+
+.nav-sidebar .nav-link.active p {
+    color: #1e272e !important;
+}
+
+/* Active State untuk Submenu */
+.nav-sidebar .nav-treeview > .nav-item > .nav-link.active {
+    background-color: #f39c12 !important;
+    color: #1e272e !important;
+}
+
+/* Parent menu yang terbuka */
+.nav-sidebar .nav-item.menu-open > .nav-link {
+    background-color: rgba(243, 156, 18, 0.15);
+    border-radius: 5px;
+}
+
+/* Hover effect untuk menu utama */
+.nav-sidebar > .nav-item > .nav-link:hover {
+    background-color: rgba(243, 156, 18, 0.2);
+    border-radius: 5px;
+}
+
+/* Icon arrow untuk dropdown */
+.nav-sidebar .nav-link .right,
+.nav-sidebar .nav-link p .right,
+.nav-sidebar .nav-link > p > i.right {
+    transition: transform 0.3s ease;
+}
+
+.nav-sidebar .nav-item.menu-open > .nav-link .right,
+.nav-sidebar .nav-item.menu-open > .nav-link p .right,
+.nav-sidebar .nav-item.menu-open > .nav-link > p > i.right {
+    transform: rotate(90deg) !important;
+}
+
+
+/* Sidebar Collapsed State */
+.sidebar-collapse .main-sidebar .nav-link p,
+.sidebar-collapse .main-sidebar .brand-link span {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.sidebar-collapse .main-sidebar:hover .nav-link p,
+.sidebar-collapse .main-sidebar:hover .brand-link span {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Hide arrow when collapsed */
+.sidebar-collapse .main-sidebar .nav-link .right {
+    opacity: 0;
+}
+
+.sidebar-collapse .main-sidebar:hover .nav-link .right {
+    opacity: 1;
+}
+
+/* Center icons when collapsed */
+.sidebar-collapse .main-sidebar .nav-link {
+    text-align: center;
+}
+
+.sidebar-collapse .main-sidebar .nav-link .nav-icon {
+    margin-right: 0;
+    font-size: 1.2rem;
+    transition: none;
+}
+
+.sidebar-collapse .main-sidebar:hover .nav-link {
+    text-align: left;
+}
+
+.sidebar-collapse .main-sidebar:hover .nav-link .nav-icon {
+    margin-right: 0.5rem;
+}
+
+/* Remove sidebar transition animations */
+.main-sidebar,
+.main-sidebar *,
+.nav-sidebar .nav-link,
+.nav-sidebar .nav-icon {
+    transition: none !important;
+}
