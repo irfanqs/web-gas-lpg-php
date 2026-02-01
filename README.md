@@ -7,8 +7,8 @@ Aplikasi web penjualan gas LPG dengan fitur pembayaran online menggunakan Midtra
 - PHP 8.4+
 - MySQL / MariaDB
 - Web server (Apache/Nginx) atau PHP built-in server
-- Akun Midtrans (untuk payment gateway)[^1]
-- Akun Google reCAPTCHA v2[^2]
+- Akun Midtrans (untuk payment gateway)
+- Akun Google reCAPTCHA v2
 
 ## Instalasi
 
