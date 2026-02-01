@@ -6,9 +6,9 @@
  * =====================================================
  */
 
-// Filter tanggal - default dari 1 Januari tahun ini
-$tanggal_awal = isset($_GET['tanggal_awal']) ? $_GET['tanggal_awal'] : date('Y-01-01');
-$tanggal_akhir = isset($_GET['tanggal_akhir']) ? $_GET['tanggal_akhir'] : date('Y-m-d');
+// Filter tanggal - default dari hari ini sampai akhir bulan
+$tanggal_awal = isset($_GET['tanggal_awal']) ? $_GET['tanggal_awal'] : date('Y-m-d');
+$tanggal_akhir = isset($_GET['tanggal_akhir']) ? $_GET['tanggal_akhir'] : date('Y-m-t');
 
 // Ambil data penjualan - urut ascending berdasarkan tanggal
 $query_penjualan = mysqli_query($koneksi, "

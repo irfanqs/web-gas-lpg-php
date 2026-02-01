@@ -38,10 +38,10 @@ if (isset($_POST['setujui'])) {
         $catatan = escapeString($_POST['catatan_agen']);
         $waktu = date('Y-m-d H:i:s');
         
-        // Update status permintaan
+        // Update status permintaan langsung ke selesai
         mysqli_query($koneksi, "
             UPDATE tb_permintaan_gas 
-            SET status = 'disetujui', catatan_agen = '$catatan', waktu_respon = '$waktu'
+            SET status = 'selesai', catatan_agen = '$catatan', waktu_respon = '$waktu', waktu_selesai = '$waktu'
             WHERE id_permintaan = $id_permintaan
         ");
         
@@ -64,9 +64,6 @@ if (isset($_POST['setujui'])) {
             INSERT INTO tb_distribusi (id_permintaan, id_agen, id_admin, id_produk, jumlah, keterangan)
             VALUES ($id_permintaan, $id_agen, {$data['id_admin']}, {$data['id_produk']}, {$data['jumlah']}, '$catatan')
         ");
-        
-        // Update status jadi selesai
-        mysqli_query($koneksi, "UPDATE tb_permintaan_gas SET status = 'selesai', waktu_selesai = '$waktu' WHERE id_permintaan = $id_permintaan");
         
         echo "<script>alert('Permintaan disetujui dan stok telah didistribusikan!'); window.location='index.php?page=permintaan';</script>";
         exit();

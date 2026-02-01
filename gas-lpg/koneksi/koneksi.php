@@ -6,6 +6,8 @@
  * =====================================================
  */
 
+// Set timezone Indonesia
+date_default_timezone_set('Asia/Jakarta');
 
 // KONFIGURASI DATABASE
 $db_host = 'localhost';      // Host database

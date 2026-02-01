@@ -85,7 +85,6 @@ if ($data['status'] == 'selesai') {
                                 <?php
                                 $badge = [
                                     'menunggu' => 'warning',
-                                    'disetujui' => 'success',
                                     'ditolak' => 'danger',
                                     'selesai' => 'info'
                                 ];
@@ -151,10 +150,6 @@ if ($data['status'] == 'selesai') {
                         <i class="fas fa-clock fa-4x text-warning mb-3"></i>
                         <h4>Menunggu Respon Agen</h4>
                         <p class="text-muted">Permintaan Anda sedang diproses oleh agen</p>
-                    <?php elseif ($data['status'] == 'disetujui'): ?>
-                        <i class="fas fa-check-circle fa-4x text-success mb-3"></i>
-                        <h4>Permintaan Disetujui</h4>
-                        <p class="text-muted">Agen telah menyetujui permintaan Anda</p>
                     <?php elseif ($data['status'] == 'selesai'): ?>
                         <i class="fas fa-check-double fa-4x text-info mb-3"></i>
                         <h4>Distribusi Selesai</h4>

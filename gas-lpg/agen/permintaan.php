@@ -51,9 +51,6 @@ $query = mysqli_query($koneksi, "
                 <a href="index.php?page=permintaan&status=menunggu" class="btn <?php echo ($filter_status == 'menunggu') ? 'btn-warning' : 'btn-outline-warning'; ?>">
                     Menunggu
                 </a>
-                <a href="index.php?page=permintaan&status=disetujui" class="btn <?php echo ($filter_status == 'disetujui') ? 'btn-success' : 'btn-outline-success'; ?>">
-                    Disetujui
-                </a>
                 <a href="index.php?page=permintaan&status=selesai" class="btn <?php echo ($filter_status == 'selesai') ? 'btn-info' : 'btn-outline-info'; ?>">
                     Selesai
                 </a>
@@ -105,13 +102,11 @@ $query = mysqli_query($koneksi, "
                                     <?php
                                     $badge = [
                                         'menunggu' => 'warning',
-                                        'disetujui' => 'success',
                                         'ditolak' => 'danger',
                                         'selesai' => 'info'
                                     ];
                                     $icon = [
                                         'menunggu' => 'clock',
-                                        'disetujui' => 'check',
                                         'ditolak' => 'times',
                                         'selesai' => 'check-double'
                                     ];

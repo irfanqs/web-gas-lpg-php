@@ -14,8 +14,8 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'Admin') {
 
 $nama_admin = $_SESSION['nama'];
 
-$tanggal_awal = isset($_GET['tanggal_awal']) ? $_GET['tanggal_awal'] : date('Y-01-01');
-$tanggal_akhir = isset($_GET['tanggal_akhir']) ? $_GET['tanggal_akhir'] : date('Y-m-d');
+$tanggal_awal = isset($_GET['tanggal_awal']) ? $_GET['tanggal_awal'] : date('Y-m-d');
+$tanggal_akhir = isset($_GET['tanggal_akhir']) ? $_GET['tanggal_akhir'] : date('Y-m-t');
 
 // Ambil data
 $query_penjualan = mysqli_query($koneksi, "

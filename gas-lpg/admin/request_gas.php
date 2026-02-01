@@ -61,9 +61,6 @@ $has_agen = !empty($data_admin['id_agen']);
                 <a href="index.php?page=request_gas&status=menunggu" class="btn <?php echo ($filter_status == 'menunggu') ? 'btn-warning' : 'btn-outline-warning'; ?>">
                     Menunggu
                 </a>
-                <a href="index.php?page=request_gas&status=disetujui" class="btn <?php echo ($filter_status == 'disetujui') ? 'btn-success' : 'btn-outline-success'; ?>">
-                    Disetujui
-                </a>
                 <a href="index.php?page=request_gas&status=selesai" class="btn <?php echo ($filter_status == 'selesai') ? 'btn-info' : 'btn-outline-info'; ?>">
                     Selesai
                 </a>
@@ -112,13 +109,11 @@ $has_agen = !empty($data_admin['id_agen']);
                                     <?php
                                     $badge = [
                                         'menunggu' => 'warning',
-                                        'disetujui' => 'success',
                                         'ditolak' => 'danger',
                                         'selesai' => 'info'
                                     ];
                                     $icon = [
                                         'menunggu' => 'clock',
-                                        'disetujui' => 'check',
                                         'ditolak' => 'times',
                                         'selesai' => 'check-double'
                                     ];

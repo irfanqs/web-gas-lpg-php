@@ -35,12 +35,15 @@ if (isset($_POST['login'])) {
     $password = $_POST['password'];
     $recaptcha_response = $_POST['g-recaptcha-response'] ?? '';
     
-    // Validasi reCAPTCHA v2
-    if (empty($recaptcha_response)) {
-        $error_message = 'Silakan centang captcha terlebih dahulu!';
-    } elseif (!validateRecaptcha($recaptcha_response)) {
-        $error_message = 'Verifikasi captcha gagal. Silakan coba lagi!';
-    } else {
+    // Validasi reCAPTCHA v2 (dimatikan untuk testing)
+    // if (empty($recaptcha_response)) {
+    //     $error_message = 'Silakan centang captcha terlebih dahulu!';
+    // } elseif (!validateRecaptcha($recaptcha_response)) {
+    //     $error_message = 'Verifikasi captcha gagal. Silakan coba lagi!';
+    // } else {
+    
+    // Langsung proses login tanpa captcha
+    {
         // Query untuk mencari user
         $query = mysqli_query($koneksi, "SELECT * FROM user WHERE email='$email'");
         $cek = mysqli_num_rows($query);
@@ -137,10 +140,12 @@ if (isset($_POST['login'])) {
                     </div>
                 </div>
 
-                <!-- reCAPTCHA v2 Checkbox -->
+                <!-- reCAPTCHA v2 Checkbox (dimatikan untuk testing) -->
+                <!--
                 <div class="mb-3 d-flex justify-content-center">
                     <div class="g-recaptcha" data-sitekey="<?php echo RECAPTCHA_SITE_KEY; ?>" data-theme="dark"></div>
                 </div>
+                -->
 
                 <div class="row">
                     <div class="col-7">
