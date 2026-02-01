@@ -60,9 +60,6 @@ $unread_count = mysqli_fetch_assoc($query_unread)['total'];
                                     <?php endif; ?>
                                     <?php echo $row['judul']; ?>
                                 </h5>
-                                <?php if ($row['kode_pesanan']): ?>
-                                <small class="text-muted">Kode Pesanan: <?php echo $row['kode_pesanan']; ?></small>
-                                <?php endif; ?>
                             </div>
                             <small class="text-muted">
                                 <?php echo date('d/m/Y H:i', strtotime($row['created_at'])); ?>

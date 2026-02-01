@@ -15,7 +15,7 @@ $query_pesanan = mysqli_query($koneksi, "
     JOIN tb_produk pr ON p.id_produk = pr.id_produk 
     LEFT JOIN tb_pembayaran pb ON p.id_pesanan = pb.id_pesanan
     WHERE p.status = 'paid'
-    ORDER BY p.waktu_bayar ASC
+    ORDER BY p.waktu_bayar DESC
 ");
 ?>
 

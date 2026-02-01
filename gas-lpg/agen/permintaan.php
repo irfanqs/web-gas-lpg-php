@@ -23,14 +23,7 @@ $query = mysqli_query($koneksi, "
     JOIN user u ON pg.id_admin = u.id_user
     JOIN tb_produk p ON pg.id_produk = p.id_produk
     $where
-    ORDER BY 
-        CASE pg.status 
-            WHEN 'menunggu' THEN 1 
-            WHEN 'disetujui' THEN 2 
-            WHEN 'selesai' THEN 3 
-            WHEN 'ditolak' THEN 4 
-        END,
-        pg.waktu_permintaan DESC
+    ORDER BY pg.waktu_permintaan DESC
 ");
 ?>
 

@@ -32,7 +32,13 @@ $query_permintaan = mysqli_query($koneksi, "
     JOIN user u ON pg.id_admin = u.id_user
     JOIN tb_produk p ON pg.id_produk = p.id_produk
     WHERE pg.id_agen = $id_agen
-    ORDER BY pg.waktu_permintaan DESC
+    ORDER BY 
+        CASE pg.status 
+            WHEN 'menunggu' THEN 1 
+            WHEN 'selesai' THEN 2 
+            WHEN 'ditolak' THEN 3 
+        END,
+        pg.waktu_permintaan DESC
     LIMIT 5
 ");
 ?>

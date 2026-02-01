@@ -16,8 +16,8 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'Agen') {
 $id_agen = $_SESSION['id_user'];
 $nama_agen = $_SESSION['nama'];
 
-$tgl_awal = isset($_GET['tgl_awal']) ? $_GET['tgl_awal'] : date('Y-m-01');
-$tgl_akhir = isset($_GET['tgl_akhir']) ? $_GET['tgl_akhir'] : date('Y-m-d');
+$tgl_awal = isset($_GET['tgl_awal']) ? $_GET['tgl_awal'] : date('Y-m-d');
+$tgl_akhir = isset($_GET['tgl_akhir']) ? $_GET['tgl_akhir'] : date('Y-m-t');
 
 // Data laporan
 $query_distribusi = mysqli_query($koneksi, "

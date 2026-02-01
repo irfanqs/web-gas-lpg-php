@@ -8,9 +8,9 @@
 
 $id_agen = $_SESSION['id_user'];
 
-// Filter periode
-$tgl_awal = isset($_GET['tgl_awal']) ? $_GET['tgl_awal'] : date('Y-m-01');
-$tgl_akhir = isset($_GET['tgl_akhir']) ? $_GET['tgl_akhir'] : date('Y-m-d');
+// Filter periode - default dari hari ini sampai akhir bulan
+$tgl_awal = isset($_GET['tgl_awal']) ? $_GET['tgl_awal'] : date('Y-m-d');
+$tgl_akhir = isset($_GET['tgl_akhir']) ? $_GET['tgl_akhir'] : date('Y-m-t');
 
 // Laporan Stok Masuk
 $query_masuk = mysqli_query($koneksi, "

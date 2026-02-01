@@ -16,8 +16,8 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'Agen') {
 $id_agen = $_SESSION['id_user'];
 $nama_agen = $_SESSION['nama'];
 $tipe = isset($_GET['tipe']) ? $_GET['tipe'] : 'distribusi';
-$tgl_awal = isset($_GET['tgl_awal']) ? $_GET['tgl_awal'] : date('Y-m-01');
-$tgl_akhir = isset($_GET['tgl_akhir']) ? $_GET['tgl_akhir'] : date('Y-m-d');
+$tgl_awal = isset($_GET['tgl_awal']) ? $_GET['tgl_awal'] : date('Y-m-d');
+$tgl_akhir = isset($_GET['tgl_akhir']) ? $_GET['tgl_akhir'] : date('Y-m-t');
 
 // Set header untuk download Excel
 $filename = "laporan_{$tipe}_{$tgl_awal}_{$tgl_akhir}.xls";
